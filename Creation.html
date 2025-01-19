@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installation de la Machine Virtuelle</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/creation.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Machines Virtuelles</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Creation.html">Creation Machines Virtuelles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Personnalisation.html">Personnalisation MV</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Configuration.html">Configuration</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Installation de la machine virtuelle</h1>
+                <p class="lead">Guide détaillé pour l'installation d'Ubuntu sur VirtualBox</p>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="step-section">
+            <div class="step-header">
+                <div class="step-number">1</div>
+                <h2>Configuration Initiale</h2>
+            </div>
+            <div class="step-content">
+                <p>Nous avons choisi comme logiciel d’utiliser VirtualBox, il nous a été recommandé par un programmeur et avons donc suivit son avis. Quand au système d’exploitation à installer, nous avons choisit Ubuntu, puisque c’est une distribution de linux plutot simple à utiliser, ce qui nous facilitera la vie.
+                    Une fois VirtualBox installé, nous avons créé une nouvelle machine virtuelle avec les réglages suivants : </p>
+                <p>Elle est nommée Ubuntu SAE (nom assez éloquent), sa localisation sera laissée par défault, ce sera plus simple de la retrouver. Nous donnerons un fichier ISO plus tard, pour l’instant elle sera vide. Nous indiquons enfin que la machine sera sous Ubuntu Linux. </p>
+                <img src="assets/img/1.png" alt="Configuration initiale VirtualBox" class="step-image">
+            </div>
+        </section>
+
+        <section class="step-section">
+            <div class="step-header">
+                <div class="step-number">2</div>
+                <h2>Configuration Matérielle</h2>
+            </div>
+            <div class="step-content">
+                <p> Nous lui donnons 4 gigas de RAM, c’est ce qui est recommandé, Ubuntu est plutôt léger, il est donc pas nécessaire d’en donner plus. Lui donner maximum de RAM serait même nocif pour notre machine puisqu'il n’y en aurait plus sur notre machine physique. Nous lui donnons quatre processeurs puisque nous allons installer un serveur, cela lui permettra de le faire tourner sans impacter la machine.
+                </p>
+                <img src="assets/img/2.png" alt="Configuration matérielle" class="step-image">
+            </div>
+        </section>
+
+        <section class="step-section">
+            <div class="step-header">
+                <div class="step-number">3</div>
+                <h2>Configuration du Stockage</h2>
+            </div>
+            <div class="step-content">
+                <p>Nous créons un disque dur virtuel (un fichier) de 25 gigas, celà nous permettra de télécharger ce que l’on veut sur notre machine tout en ne prenant pas toute la place sur notre machine physique (ce fichier ne fait pas 25 gigas tant qu’il n’est pas remplit dasn tout les cas).</p>
+                <img src="assets/img/3.png" alt="Configuration du stockage" class="step-image">
+            </div>
+        </section>
+
+        <section class="step-section">
+            <div class="step-header">
+                <div class="step-number">4</div>
+                <h2>Configuration du Système</h2>
+            </div>
+            <div class="step-content">
+                <p>On va ensuite dans les réglages, afin de donner à notre machine virtuelle un système d’exploitation (sous la forme d’un fichier ISO, autrement dit un faux disque), et on le sélectionne.
+                </p>
+                <div class="image-grid">
+                    <img src="assets/img/4.png" alt="Sélection ISO" class="step-image">
+                    <img src="assets/img/5.png" alt="Configuration ISO" class="step-image">
+                </div>
+            </div>
+        </section>
+        <section class="step-section">
+            <div class="step-header">
+                <div class="step-number">5</div>
+                <h2>Configuration Finale</h2>
+            </div>
+            <div class="step-content">
+                <p>On peut ensuite lancer la machine, créer notre premier utilisateur selon la syntaxe demandée, on suit ensuite le tutoriel d’installation d’Ubuntu, puis on redémarre la machine. Avant de la redémarrer, on active le presse-papier et le glisser-Déposer bidirectionnel. Celà nous sera utile pour copier des commandes par exemple...
+                </p>
+                <img src="assets/img/6.png" alt="Configuration finale" class="step-image">
+            </div>
+        </section>
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <a href="index.html" class="btn btn-secondary">
+                    ← Retour à l'accueil
+                </a>
+            </div>
+            <div class="col-md-6 text-end">
+                <a href="Personnalisation.html" class="btn btn-primary">
+                    Passer à la personnalisation web →
+                </a>
+            </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>À propos</h3>
+                    <p>Guide complet pour la création et la configuration de machines virtuelles.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Navigation rapide</h3>
+                    <a href="creation.html">Création VM</a>
+                    <a href="personnalisation.html">Personnalisation VM</a>
+                    <a href="configuration-web.html">Configuration Web</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

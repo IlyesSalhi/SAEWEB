@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personnalisation de la Machine Virtuelle</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/personnalisation.css" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Machines Virtuelles</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Creation.html">Creation Machines Virtuelles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Personnalisation.html">Personnalisation MV</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Configuration.html">Configuration</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <h1>Personnalisation de votre Machine Virtuelle</h1>
+                <p class="lead">Optimisez votre machine virtuelle selon vos besoins spécifiques</p>
+            </div>
+        </section>
+
+        <div class="container">
+
+            <div class="card customization-card">
+                <div class="card-header">
+                    La Création d'Utilisateurs sous Linux
+                </div>
+                <div class="card-body">
+                    <div class="config-item">
+                        <p>Après la connexion au système Linux, la première étape consiste à créer les comptes utilisateurs nécessaires. Pour cela, nous utilisons la commande useradd, qui est l'outil standard de création de comptes utilisateurs sous Linux.</p>
+                        <ul>
+                            <li>Création d'un compte utilisateur</li>
+                            <li>Création du répertoire personnel (/home/nom_utilisateur)</li>
+                            <li>Attribution des permissions de base</li>
+                        </ul>
+                        <img src="assets/img/Image7.png" alt="Configuration initiale VirtualBox" class="step-image">
+
+                        <p>Dans un système Linux, après avoir créé les utilisateurs, il est essentiel de leur attribuer des mots de passe sécurisés. La commande passwd est l'outil dédié à cette tâche.</p>
+                        <img src="assets/img/Image8.png" alt="Configuration initiale VirtualBox" class="step-image">
+
+                        <div class="tip-box">
+                            <strong>Resumé :</strong> La commande useradd crée un compte utilisateur avec son répertoire personnel et ses permissions, puis passwd permet de définir son mot de passe.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card customization-card">
+                <div class="card-header">
+                    Création des binômes
+                </div>
+                <div class="card-body">
+                    <div class="config-item">
+                        <ul>
+                            <li>Création du groupe
+                                Utilisation de groupadd pour créer le groupe Binome_1.
+                            </li>
+                            <li>Ajout des membres
+                                Ajout de Binome1_1 et Binome1_2 au groupe avec usermod -aG.</li>
+                            <li>Vérification des groupes
+                                Confirmation de l'appartenance aux groupes avec la commande groups.</li>
+                        </ul>
+                        <p>On crée un groupe Binome_1 avec la commande groupadd, puis on ajoute Binome1_1 et Binome1_2 via la commande usermod –aG, usermod permet de modifier un compte utilisateur, -aG signifie qu’on va ajouter cet utilisateur à un ou plusieurs groupes.</p>
+                        <img src="assets/img/Image9.png" alt="Configuration initiale VirtualBox" class="step-image">
+
+                        <p>On peut vérifier que les deux utilisateurs sont bien membres de Binome1 avec la commande groups. On voit ici que chacun d’entre eux est membre de son propre groupe et de Binome1.</p>
+                        <img src="assets/img/Image10.png" alt="Configuration initiale VirtualBox" class="step-image">
+
+                        <div class="tip-box">
+                            <strong>Resumé :</strong> Pour créer un binôme, on crée d'abord un groupe avec groupadd, on y ajoute les utilisateurs via usermod -aG, puis on vérifie leur appartenance avec groups.
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card customization-card">
+                <div class="card-header">
+                    Personnalisation du terminal
+                </div>
+                <div class="card-body">
+                    <div class="config-item">
+                        <p>Pour personnaliser l’invite de commande, il faut toucher à la variable PS1, qui correspond au prompt d’affichage par défaut dans le terminal. On pourrait simplement la redéfinir directement dans le terminal, mais ce changement ne marcherait que tant que ce dernier est ouvert, et disparaitrait lors de la fermeture de celui-ci. </p>
+                        <img src="assets/img/Image11.png" alt="Configuration initiale VirtualBox" class="step-image">
+                        <p>C’est pour celà, qu'ici nous allons aller directement changer la variable à sa location. La variable PS1 se situe dans le fichier .bashrc qui se trouve dans le répertoire courant de l’utilisateur. Nous allons donc l’ouvrir avec l’éditeur de texte nano, puis chercher la localisation de la variable et la changer.</p>
+                        <img src="assets/img/Image12.png" alt="Configuration initiale VirtualBox" class="step-image">
+                        <p>Ici nous avons simplement enlevé tout à part l’affichage du nom de l’utilisateur(\u) et de la localisation actuelle de l’utilisateur (\w), on aurait tout aussi pu mettre un texte personnalisé comme “Votre commande : ” par exemple. Nous changerons les deux définitions de variable, en couleur ou non. Après avoir sauvegardé et refermé le fichier, le prompt est maintenant différent, et il le restera même en cas de redémarrage de la machine.</p>
+                        <img src="assets/img/Image13.png" alt="Configuration initiale VirtualBox" class="step-image">
+
+                    </div>
+                    <div class="tip-box">
+                        <strong>Resumé :</strong> La personnalisation permanente du prompt se fait en modifiant la variable PS1 dans le fichier .bashrc, permettant d'afficher le nom d'utilisateur (\u) et sa localisation (\w).
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <a href="Creation.html" class="btn btn-secondary">
+                        ← Retour à la création
+                    </a>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a href="Configuration.html" class="btn btn-primary">
+                        Passer à la configuration web →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>À propos</h3>
+                    <p>Guide complet pour la création et la configuration de machines virtuelles.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Navigation rapide</h3>
+                    <a href="creation.html">Création VM</a>
+                    <a href="personnalisation.html">Personnalisation VM</a>
+                    <a href="configuration-web.html">Configuration Web</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

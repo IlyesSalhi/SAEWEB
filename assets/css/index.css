@@ -1,0 +1,82 @@
+
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 56px;
+}
+
+.navbar {
+    background-color: var(--primary-color);
+}
+
+.nav-link {
+    color: rgba(255,255,255,0.8) !important;
+}
+
+.nav-link:hover {
+    color: white !important;
+}
+
+.hero-section {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 6rem 0;
+    margin-bottom: 3rem;
+    background-image: linear-gradient(rgba(44, 62, 80, 0.9), rgba(52, 73, 94, 0.9));
+    background-size: cover;
+    background-position: center;
+}
+
+.feature-card {
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+
+.benefits-section {
+    background-color: #f8f9fa;
+    padding: 4rem 0;
+    margin: 3rem 0;
+}
+
+.benefit-item {
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 1.5rem;
+}
+
+.cta-section {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 4rem 0;
+    margin: 3rem 0;
+}
+
+.footer {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 2rem 0;
+    margin-top: auto;
+}

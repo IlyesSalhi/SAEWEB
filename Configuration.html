@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuration Web - Machines Virtuelles</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/configuration.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Machines Virtuelles</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Creation.html">Creation Machines Virtuelles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Personnalisation.html">Personnalisation MV</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Configuration.html">Configuration</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container">
+            <h1>Configuration Web de la Machine Virtuelle</h1>
+            <p class="lead">Guide détaillé pour la mise en place de votre environnement web</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="step-section">
+            <div class="step-header">
+            <h2>Installation d'un site web</h2>
+
+            </div>
+            <div class="step-content">
+                <p>Pour commencer nous avons installé Apache2, via la commande apt install. C’est Apache que nous utiliserons en tant que serveur.</p>
+                <img src="assets/img/Image14.png" alt="Configuration initiale VirtualBox" class="step-image">
+                <p>On peut vérifier qu'Apache2 marche en utilisant la commande systemctl status. On voit ici que le serveur Apache est bien actif.</p>
+                <img src="assets/img/Image15.png" alt="Configuration initiale VirtualBox" class="step-image">
+                <p>On peut même le vérifier en allant sur un navigateur. Il nous faut l’IP de notre machine virtuelle, on utilise la commande ip –a pour l’obtenir. Ensuite, on se rend sur notre navigateur et on tape l’ip, on voit que l’on arrive bien sur la page par défault d’Apache</p>
+                <img src="assets/img/Image16.png" alt="Configuration initiale VirtualBox" class="step-image">
+
+                <img src="assets/img/Image17.png" alt="Configuration initiale VirtualBox" class="step-image">
+                <p>Vu que nous avions oublié de mettre en place un server SSH, nous le créons maintenant, et passons la machine en mode pont, elle était jusqu’ici en mode NAT, d’où l’adresse IP assez spéciale.</p>
+                <img src="assets/img/image18.png" alt="Configuration initiale VirtualBox" class="step-image">
+                <p>On crée ensuite un fichier Site_SAE.fr dans le home de notre utilisateur, ou sera accueillit les fichiers de notre site web. On crée ensuite un lien dans srv vers ce fichier.</p>
+                <img src="assets/img/image19.png" alt="Configuration initiale VirtualBox" class="step-image">
+                <p>On donne également les permissions de lecture et d’exécutions a others pour que le serveur puisse accéder au fichier de notre utilisateur.</p>
+                <img src="assets/img/image20.png" alt="Configuration initiale VirtualBox" class="step-image">
+                <p>On effectue les redirections qu’il faut dans les fichiers config d’apache, en redirigeant vers le lien et enlevant le fait qu’Apache agisse comme un explorateur de fichier.</p>
+                <img src="assets/img/image21.png" alt="Configuration initiale VirtualBox" class="step-image">
+                <img src="assets/img/image22.png" alt="Configuration initiale VirtualBox" class="step-image">
+                <p>On se rend finalement sur Webstorm, pour créer un nouveau deployment SFTP, avec les configurations montrées sur l’image.</p>
+                <img src="assets/img/image23.png" alt="Configuration initiale VirtualBox" class="step-image">
+                <p>Voici la configuration SSH :</p>
+                <img src="assets/img/image24.png" alt="Configuration initiale VirtualBox" class="step-image">
+                <p>Pour finir, on upload nos fichiers sur la machine virtuelle (ici on utilise notre site web de BDD réalisé en période A pour tester). On vérifie que les fichiers sont bien présents sur notre machine virtuelle.</p>
+                <img src="assets/img/image25.png" alt="Configuration initiale VirtualBox" class="step-image">
+                <p>On relance maintenant le serveur Apache, et lorsqu’on se rend sur l’IP de notre machine, le site apparait!</p>
+                <img src="assets/img/image26.png" alt="Configuration initiale VirtualBox" class="step-image">
+
+            </div>
+        </section>
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <a href="Personnalisation.html" class="btn btn-secondary">
+                    ← Retour à la personnalisation
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>À propos</h3>
+                    <p>Guide complet pour la création et la configuration de machines virtuelles.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Navigation rapide</h3>
+                    <a href="creation.html">Création VM</a>
+                    <a href="personnalisation.html">Personnalisation VM</a>
+                    <a href="configuration-web.html">Configuration Web</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
